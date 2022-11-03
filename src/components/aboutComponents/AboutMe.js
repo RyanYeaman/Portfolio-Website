@@ -1,12 +1,12 @@
 
 
-const AboutMe = () => {
+const AboutMe = (props) => {
 
   return (
     <div className="about-container">
-      <h1 className="about-me-title ">About Me</h1>
+      <h1 className={`about-me-title ${props.currentPage === "about" ? "about-me-title-active" : ""}`}>About Me</h1>
       <div className="about-me-content">
-        <div className="skills-box">
+        <div className={`skills-box ${props.currentPage === "about" ? "skills-box-active" : ""}`}>
           <div className="code-languges-container">
             <h2 className="code-languges-title">Code Languges</h2>
             <div className="code-languges-content">
@@ -49,7 +49,7 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-        <p className="about-me-paragraph">Hello, I’m Ryan, <br />
+        <p className={`about-me-paragraph ${props.currentPage === "about" ? "about-me-paragraph-active" : ''}`}>Hello, I’m Ryan, <br />
           a front-end developer and UI designer that has a passion for developing user interfaces for web and mobile devices. My instest for web development first began in 2021 when I was decided to learn HTML/CSS. I soon realized after completing my some of the project’s in the course I was taking online, that I had a deep passion for software development so i decided to start my journey as a front-end developer.
 
           Since then I have decidated my time into learning & mastering different code languges, frameworks/Libraries, & collaboration tools.

@@ -13,14 +13,21 @@ const NavMenu = (props) => {
                 MENU
             </p>
             <ul className='nav-menu'>
-                <li onClick= {(e) => {props.changePosition(props.activePage, e)}} className={`nav-menu-item about-me ${menuToggled ? "about-me-is-active" : ""}`}>
+                <li onClick= { () => {props.setCurrentPage("home")} } className={`nav-menu-item home ${menuToggled ? "home-is-active" : ""}`}>
+                    Home
+                    <div className='underline'>
+                        <span className='bar'></span>
+                        <span className='bar'></span>
+                    </div>
+                </li>
+                <li onClick= { () => {props.setCurrentPage("about")} } className={`nav-menu-item about-me ${menuToggled ? "about-me-is-active" : ""}`}>
                     About Me
                     <div className='underline'>
                         <span className='bar'></span>
                         <span className='bar'></span>
                     </div>
                 </li>
-                <li onClick={(e) => {props.changePosition(props.activePage, e)}} className={`nav-menu-item projects ${menuToggled ? "projects-is-active" : ""}`}>
+                <li onClick={ () => {props.setCurrentPage("projects")} } className={`nav-menu-item projects ${menuToggled ? "projects-is-active" : ""}`}>
                     Projects
                     <div className='underline'>
                         <span className='bar'></span>

@@ -9,13 +9,14 @@ const Homepage = (props) => {
       <div className='home-content-container'>
         <HomeContent 
           pageToggled={props.pageToggled} 
-          activePage={props.activePage} 
-          currentPage={props.getCurrentPage} 
-          aboutMePage={props.aboutMePage} 
-          getCurrentPage={props.getCurrentPage}
+          currentPage={props.currentPage}
         />
-        <AboutMe />
-        {/* <ProjectPage /> */}
+        <AboutMe 
+          currentPage={props.currentPage}
+        />
+        <ProjectPage 
+          currentPage={props.currentPage}
+        />
       </div>
     </div>
   )
