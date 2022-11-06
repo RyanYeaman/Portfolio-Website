@@ -6,15 +6,15 @@ const Homepage = (props) => {
 
   return (
     <div id='home-page'>
-      <div className='home-content-container'>
-        <HomeContent 
-          pageToggled={props.pageToggled} 
+      <div className="home-page-border">
+        <HomeContent
+          pageToggled={props.pageToggled}
           currentPage={props.currentPage}
         />
-        <AboutMe 
+        <AboutMe
           currentPage={props.currentPage}
         />
-        <ProjectPage 
+        <ProjectPage
           currentPage={props.currentPage}
         />
       </div>

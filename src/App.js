@@ -12,13 +12,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState("home")
 
   return (
-    <div>
+    <>
       <NavBar toggleHome={toggleHome} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <HomePage
         pageToggled={pageToggled}
         currentPage={currentPage}
       />
-    </div>
+    </>
   );
 }
 

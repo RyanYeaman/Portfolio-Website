@@ -5,6 +5,7 @@
     font-family: "League Spartan", sans-serif;
 }
 
+
 /* NAVBAR STYLES */
 #navbar {
     height: 150px;
@@ -101,7 +102,7 @@
 }
 
 .projects {
-    position: fixed;
+    position: absolute;
     top: 95px;
     left: -1000px;
     transition: all 0.8s ease-in;
@@ -116,7 +117,7 @@
 }
 
 .hire-me {
-    position: fixed;
+    position: absolute;
     top: 125px;
     left: -1000px;
     opacity: 0;
@@ -125,14 +126,14 @@
 }
 
 .hire-me.hire-me-is-active {
-    position: fixed;
+    position: absolute;
     top: 125px;
     left: 150px;
     opacity: 1;
 }
 
 .about-me {
-    position: fixed;
+    position: absolute;
     left: -1000px;
     top: 60px;
     opacity: 0;
@@ -141,7 +142,7 @@
 }
 
 .home {
-    position: fixed;
+    position: absolute;
     left: -1000px;
     top: 25px;
     opacity: 0;
@@ -165,7 +166,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     top: 150px;
     left: 60px;
     color: #FDFFFF;
@@ -200,27 +201,37 @@ span.bar {
 /* HOMEPAGE STYLES */
 
 #home-page {
-    max-width: auto;
-    display: flex;
+    width: 100%;
+    height: 100%;
     align-items: center;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     background: #361F27;
+    position: absolute;
+    overflow: scroll;
 }
 
-.home-content-container {
-    background: #361F27;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100vh;
+.home-page-border {
+    position: absolute;
+    height: 100%;
     width: 85%;
     box-shadow: 5px 0px 50px #000000;
 }
 
+.home-content-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    overflow: hidden;
+}
+
 .ryan-img {
-    position: fixed;
+    position: absolute;
     width: 350px;
     bottom: 0;
     filter: drop-shadow(2px 2px 50px #361F27);
@@ -235,22 +246,16 @@ span.bar {
     filter: drop-shadow(2px 2px 1rem #DB324D);
     border: 0.5px solid #521945;
     bottom: 125px;
-    position: fixed;
+    position: absolute;
     transition: all 1.5s;
 }
 
-#header-container {
-    height: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-}
 
 .header-fullname {
     transform: rotate(-90deg);
-    position: absolute;
     top: 550px;
     color: #FDFFFF;
+    position: absolute;
     font-size: 3rem;
     left: -70px;
     transition: all 1.5s;
@@ -269,7 +274,7 @@ span.bar {
 
 .homepage-introduction {
     color: #FDFFFF;
-    position: fixed;
+    position: absolute;
     font-weight: 200;
     width: auto;
     height: auto;
@@ -309,14 +314,13 @@ span.bar {
 /* ABOUT ME PAGE */
 
 .about-container {
-    top: 250;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     position: absolute;
-    height: 100vh;
 }
 
 .about-me-content {
@@ -336,8 +340,12 @@ span.bar {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
+
+
 
 .code-languges-title:nth-of-type(1) {
     margin-top: 10px;
@@ -350,7 +358,7 @@ span.bar {
 }
 
 .skills-box {
-    width: 40%;
+    width: 400px;
     background: #FDFFFF;
     margin: 0 25px;
     flex-direction: column;
@@ -359,6 +367,7 @@ span.bar {
     box-shadow: 2px 0px 35px 0px #DB324D;
     opacity: 0;
     transition: all 1s;
+    position: relative;
 }
 
 .about-me-title {
@@ -398,13 +407,10 @@ span.bar {
 
 .code-languges-list {
     width: 40%;
-    padding-left: 50px;
     font-weight: 200;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-right: 10px;
-
 }
 
 /* OPENING & CLOSING ABOUT PAGE */
@@ -425,7 +431,8 @@ span.bar {
 
 .project-container {
     position: absolute;
-    width: 80%;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -436,7 +443,7 @@ span.bar {
 }
 
 .project-container.project-container-active {
-    top: 200px;
+    top: 1px;
     opacity: 1;
 }
 
@@ -451,7 +458,7 @@ span.bar {
 .project-content {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .alderwood-project {
@@ -520,7 +527,8 @@ span.bar {
 }
 
 .alderwood-link:hover {
-    box-shadow: 2px 0px 50px 5px #DB324D;;
+    box-shadow: 2px 0px 50px 5px #DB324D;
+    ;
 }
 
 /* SAMS RESIN PROJECT STYLES */
@@ -590,7 +598,8 @@ span.bar {
 }
 
 .sams-resin-link:hover {
-    box-shadow: 2px 0px 50px 5px #DB324D;;
+    box-shadow: 2px 0px 50px 5px #DB324D;
+    ;
 }
 
 /* COLONY R PROJECT STYLES */
@@ -660,6 +669,6 @@ span.bar {
 }
 
 .colony-link:hover {
-    box-shadow: 2px 0px 50px 5px #DB324D;;
+    box-shadow: 2px 0px 50px 5px #DB324D;
+    ;
 }
-
