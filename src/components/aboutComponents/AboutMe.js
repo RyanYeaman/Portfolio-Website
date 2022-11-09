@@ -3,7 +3,7 @@
 const AboutMe = (props) => {
 
   return (
-    <div className="about-container">
+    <div className={`about-container ${props.currentPage === "about" ? "about-container-active" : ""}`}>
       <h1 className={`about-me-title ${props.currentPage === "about" ? "about-me-title-active" : ""}`}>About Me</h1>
       <div className="about-me-content">
         <div className={`skills-box ${props.currentPage === "about" ? "skills-box-active" : ""}`}>

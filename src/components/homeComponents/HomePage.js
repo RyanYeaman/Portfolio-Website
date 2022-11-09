@@ -1,14 +1,13 @@
 import AboutMe from "../aboutComponents/AboutMe";
 import ProjectPage from "../projectComponents/ProjectPage";
 import HomeContent from "./HomeContent";
+import HirePage from "../hireComponents/HirePage";
 
 const Homepage = (props) => {
 
   return (
     <div id='home-page'>
-      <div className="home-page-border">
         <HomeContent
-          pageToggled={props.pageToggled}
           currentPage={props.currentPage}
         />
         <AboutMe
@@ -17,7 +16,9 @@ const Homepage = (props) => {
         <ProjectPage
           currentPage={props.currentPage}
         />
-      </div>
+        <HirePage 
+          currentPage={props.currentPage}
+        />
     </div>
   )
 }

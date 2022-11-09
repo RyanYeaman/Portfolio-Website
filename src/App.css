@@ -5,6 +5,10 @@
     font-family: "League Spartan", sans-serif;
 }
 
+html {
+    overflow: hidden;
+}
+
 
 /* NAVBAR STYLES */
 #navbar {
@@ -31,8 +35,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 300px;
-    height: 109px;
+    width: 250px;
+    height:  50%;
     margin-right: 25px;
     filter: drop-shadow(0 0 1rem #DB324D);
     border-radius: 20px;
@@ -58,37 +62,40 @@
 
 .github-logo {
     width: 80px;
-    height: 80px;
+    height: 100%;
     cursor: pointer;
     transition: all 0.3s;
+    padding: 5px;
 }
 
 .github-logo:hover {
-    filter: drop-shadow(2px 2px 10px #570000);
+    filter: drop-shadow(2px 2px 10px #570000b0);
     transition: all 0.5s ease;
 }
 
 .linkedin-logo {
     width: 80px;
-    height: 80px;
+    height: 90%;
     cursor: pointer;
     transition: all 0.1s;
+    padding: 5px;
 }
 
 .linkedin-logo:hover {
-    filter: drop-shadow(2px 2px 10px #570000);
+    filter: drop-shadow(2px 2px 10px #57000098);
     transition: all 0.5s ease;
 }
 
 .resume-logo {
     width: 80px;
-    height: 80px;
+    height: 90%;
     cursor: pointer;
     transition: all 0.3s;
+    padding: 5px;
 }
 
 .resume-logo:hover {
-    filter: drop-shadow(2px 2px 10px #570000);
+    filter: drop-shadow(2px 2px 10px #570000a4);
     transition: all 0.5s ease;
 }
 
@@ -202,32 +209,32 @@ span.bar {
 
 #home-page {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    
     align-items: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background: #361F27;
     position: absolute;
-    overflow: scroll;
-}
-
-.home-page-border {
-    position: absolute;
-    height: 100%;
-    width: 85%;
-    box-shadow: 5px 0px 50px #000000;
+    overflow-y: scroll;
 }
 
 .home-content-container {
     display: flex;
-    position: relative;
     justify-content: center;
     height: 100%;
-    width: 100%;
+    width: 80%;
     align-items: center;
     position: absolute;
     overflow: hidden;
+    box-shadow: 5px 0px 50px #000000;
+    transition: all 1s ease;
+    margin: 0 20% 0;
+}
+
+.home-content-container-unactive {
+    box-shadow: none;
 }
 
 .ryan-img {
@@ -316,11 +323,20 @@ span.bar {
 .about-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    min-height: 100vh;
+    height: auto;
     justify-content: center;
     align-items: center;
     position: absolute;
+    top: -1000px;
+    transition: all 1s ease;
+    margin: 0 20% 0;
+}
+
+.about-container-active {
+    box-shadow: 5px 0px 50px #000000;
+    top: 0px;
 }
 
 .about-me-content {
@@ -339,10 +355,9 @@ span.bar {
 .code-languges-content {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
-    flex-wrap: wrap;
 }
 
 
@@ -353,18 +368,21 @@ span.bar {
 
 
 .code-languges-title {
-    padding-left: 15px;
+    padding: 0 15px 0;
     font-weight: 300;
 }
 
 .skills-box {
-    width: 400px;
+    min-height: auto;
+    height: fit-content;
+    min-width: fit-content;
+    width: 40%;
     background: #FDFFFF;
     margin: 0 25px;
     flex-direction: column;
     border-radius: 20px;
     border: solid 0.5px #361F27;
-    box-shadow: 2px 0px 35px 0px #DB324D;
+    filter: drop-shadow(2px 0px 15px #570000);
     opacity: 0;
     transition: all 1s;
     position: relative;
@@ -382,6 +400,7 @@ span.bar {
 
 .about-me-paragraph {
     width: 60%;
+    padding: 5px 25px 5px;
     margin-left: 15px;
     color: #FDFFFF;
     line-height: 1.5em;
@@ -397,19 +416,19 @@ span.bar {
 
 .code-items {
     width: 60%;
-    height: 64.5px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: flex-start;
-    padding-top: 10px;
+    align-items: center;
 }
 
 .code-languges-list {
-    width: 40%;
+    width: auto;
+    height: 100%;
     font-weight: 200;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
@@ -431,8 +450,8 @@ span.bar {
 
 .project-container {
     position: absolute;
-    width: 100%;
-    min-height: 100vh;
+    width: 80%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -440,30 +459,37 @@ span.bar {
     top: -2000px;
     opacity: 0;
     transition: all 1s ease;
+    margin: 0 20% 0;
+
 }
 
 .project-container.project-container-active {
-    top: 1px;
+    top: 0px;
     opacity: 1;
+    box-shadow: 5px 0px 50px #000000;
 }
 
 .project-title {
     text-align: center;
     color: #FDFFFF;
-    font-size: 5em;
+    font-size: 4.5em;
     margin-bottom: 50px;
-    font-weight: 400;
+    font-weight: 300;
+    margin-top: 250px;
 }
 
 .project-content {
     display: flex;
     flex-direction: column;
-
 }
 
 .alderwood-project {
     display: flex;
     flex-direction: row;
+    padding: 10px 0 30px;
+    margin: 25px 50px 5px;
+    border-bottom: 0.5px solid #FDFFFF;
+    min-height: 350px;
 }
 
 .alderwood-content {
@@ -483,11 +509,12 @@ span.bar {
 }
 
 .alderwood-summary {
-    padding: 0 10%;
+    padding: 0 5px;
     color: #FDFFFF;
     font-weight: 200;
-    font-size: 1.5em;
-    margin-bottom: 25px;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    margin-bottom: 30px;
 }
 
 .alderwood-display {
@@ -499,17 +526,17 @@ span.bar {
 }
 
 .alderwood-project-image {
-    width: 600px;
-    height: 340px;
+    width: 90%;
     border: 0.5px solid #521945;
     border-radius: 10px;
-    box-shadow: 2px 0px 40px 2px #570000;
+    filter: drop-shadow(2px 0px 15px #570000);
 }
 
 .alderwood-title {
     color: #FDFFFF;
     margin-bottom: 10px;
-    font-size: 2em;
+    font-size: 2.2em;
+    font-weight: 300;
     z-index: 1;
 }
 
@@ -523,18 +550,21 @@ span.bar {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    transition: all 0.3s;
+    transition: all 0.4s;
+    z-index: 1;
 }
 
 .alderwood-link:hover {
-    box-shadow: 2px 0px 50px 5px #DB324D;
-    ;
+    filter: drop-shadow(2px 0px 20px #570000);
 }
 
 /* SAMS RESIN PROJECT STYLES */
 .sams-resin-project {
     display: flex;
     flex-direction: row;
+    padding: 10px 0 30px;
+    margin: 20px 50px 5px;
+    border-bottom: 0.5px solid #FDFFFF;
 }
 
 .sams-resin-content {
@@ -554,11 +584,12 @@ span.bar {
 }
 
 .sams-resin-summary {
-    padding: 0 10%;
+    padding: 0 5px;
     color: #FDFFFF;
     font-weight: 200;
-    font-size: 1.5em;
-    margin-bottom: 25px;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    margin-bottom: 30px;
 }
 
 .sams-resin-display {
@@ -570,17 +601,17 @@ span.bar {
 }
 
 .sams-resin-project-image {
-    width: 600px;
-    height: 340px;
+    width: 90%;
     border: 0.5px solid #521945;
     border-radius: 10px;
-    box-shadow: 2px 0px 40px 2px #570000;
+    filter: drop-shadow(2px 0px 15px #570000);
 }
 
 .sams-resin-title {
     color: #FDFFFF;
     margin-bottom: 10px;
-    font-size: 2em;
+    font-size: 2.5em;
+    font-weight: 300;
     z-index: 1;
 }
 
@@ -590,7 +621,7 @@ span.bar {
     width: 100px;
     height: 25px;
     background: #FDFFFF;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
@@ -606,6 +637,8 @@ span.bar {
 .colony-project {
     display: flex;
     flex-direction: row;
+    padding: 10px 0 25px;
+    margin: 25px 50px 150px;
 }
 
 .colony-content {
@@ -625,11 +658,12 @@ span.bar {
 }
 
 .colony-summary {
-    padding: 0 10%;
+    padding: 0 5px;
     color: #FDFFFF;
     font-weight: 200;
-    font-size: 1.5em;
-    margin-bottom: 25px;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    margin-bottom: 30px;
 }
 
 .colony-display {
@@ -641,17 +675,18 @@ span.bar {
 }
 
 .colony-project-image {
-    width: 600px;
-    height: 340px;
+    width: 90%;
     border: 0.5px solid #521945;
     border-radius: 10px;
-    box-shadow: 2px 0px 40px 2px #570000;
+    filter: drop-shadow(2px 0px 15px #570000);
 }
+
 
 .colony-title {
     color: #FDFFFF;
-    margin-bottom: 10px;
-    font-size: 2em;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    font-weight: 300;
     z-index: 1;
 }
 
@@ -661,7 +696,7 @@ span.bar {
     width: 100px;
     height: 25px;
     background: #FDFFFF;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
@@ -670,5 +705,267 @@ span.bar {
 
 .colony-link:hover {
     box-shadow: 2px 0px 50px 5px #DB324D;
-    ;
+}
+
+
+/* HIRE PAGE STYLES */
+.hire-container {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    transition: all 1s ease;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 20% 0;
+}
+
+.hire-container-active {
+    box-shadow: 5px 0px 50px #000000;
+}
+
+.contact-box {
+    background: #FDFFFF;
+    min-width: 300px;
+    width: 45%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    min-height: auto;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+    right: 3000px;
+    transition: all 1s ease;
+    margin-top: 25px;
+}
+
+.contact-box-active {
+    right: 0px;
+}
+
+
+
+.contact-box-title {
+    padding: 5px;
+    margin: 15px 0 25px 0;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.phone {
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.email {
+    font-size: 1.7rem;
+    font-weight: 300;
+    padding: 5px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.contact-box-summary {
+    padding: 5px;
+    margin: 25px 0 15px 0;
+    text-align: center;
+}
+
+.hire-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hire-title {
+    color: #FDFFFF;
+    font-size: 4.5rem;
+    font-weight: 400;
+    padding: 5px;
+    margin-bottom: 15px;
+    right: 3000px;
+    position: relative;
+    transition: all 1s ease;
+}
+
+.hire-title.hire-title-active {
+    right: 0px;
+}
+
+.hire-introduction {
+    padding: 5px;
+    margin-bottom: 25px;
+    width: 75%;
+    text-align: center;
+    color: #FDFFFF;
+    font-weight: 200;
+    font-size: 1.5rem;
+    position: relative;
+    left: 3000px;
+    transition: all 1s ease;
+}
+
+.hire-introduction.hire-introduction-active {
+    left: 0px;
+}
+
+
+@media (max-width: 1061px) {
+    /* HOMEPAGE SECTION */
+    .homepage-introduction {
+        top: 250px;
+    }
+
+    /* ABOUT ME SECTION */
+    .about-me-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-me-title {
+        margin-top: 225px;
+    }
+
+    .skills-box {
+        padding: 5px;
+        margin-bottom: 25px;
+    }
+
+    .code-items {
+        height: 100%;
+    }
+
+    .about-me-paragraph {
+        text-align: center;
+        width: 85%;
+        padding: 5px;
+        margin-bottom: 150px;
+    }
+
+    /* PROJECTS SECTION */
+    .alderwood-project, .sams-resin-project, .colony-project {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        width: 275px;
+    }
+
+    .alderwood-title, .sams-resin-title, .colony-title {
+        width: 350px;
+        margin-bottom: 25px;
+        font-weight: 200;
+    }
+
+    .alderwood-project-image, .sams-resin-project-image, .colony-project-image {
+        margin-bottom: 25px;
+    }
+
+    .project-sams-resin, .project-alderwood, .project-colony {
+        display: none;
+    }
+
+    .alderwood-content, .sams-resin-content, .colony-content {
+        width: 75%;
+    }
+
+    .alderwood-display, .sams-resin-display, .colony-display {
+        width: 75%;
+    }
+
+    /* HIRE ME SECTION */
+    .contact-box {
+        min-width: 400px;
+    }
+
+    .contact-box-title {
+        font-size: 3rem;
+        margin: 5px 0 20px;
+    }
+
+    .contact-box-summary {
+        margin: 20px 0 10px;
+    }
+
+    .phone {
+        margin-bottom: 0px;
+    }
+
+    .email {
+        margin: 0px;
+    }
+}
+
+@media (max-width: 750px) {
+    /* HOME PAGE SECTION */
+    .header-fullname {
+        left: -70px;
+        top: 400px;
+        font-size: 2rem;
+    }
+
+    .header-skill {
+        right: -60px;
+        top: 350px;
+        font-size: 1.3rem;
+    }
+
+    .homepage-circle-background {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .ryan-img {
+        width: 240px;
+    }
+
+    .homepage-introduction {
+        width: 90%;
+        font-size: 1rem;
+        top: 225px;
+    }
+
+    /* NAVBAR SECTION */
+    .navbar-icon-container {
+        width: 50px;
+        height: fit-content;
+        margin: 10px 25px 0 0;
+        flex-direction: column;
+        top: -1000px;
+        opacity: 0;
+        right: 0;
+        position: absolute;
+        transition: all 0.8s ease;
+    }
+
+    .navbar-icon-container-active {
+        top: 0;
+        right: 0;
+        opacity: 1;
+    }
+
+    .resume-logo, .linkedin-logo {
+        width: 90%;
+        margin: 5px;
+    }
+
+    .github-logo {
+        width: 100%;
+        margin: 5px;
+    }
+
+    img.github-logo, img.resume-logo, img.linkedin-logo {
+        padding: 0;
+        margin: 0;
+    }
+
+    .alderwood-title, .sams-resin-title, .colony-title {
+        font-size: 1.5rem;
+    }
+
 }

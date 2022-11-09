@@ -11,7 +11,7 @@ const projectContent = (props) => {
                 </div>
                 <div className={`${props.name}-display`}>
                     <h2 className={`${props.name}-title`}>{props.name === 'alderwood' ? 'Alderwood Digging Crew' : props.name === 'sams-resin' ? 'Sams Resin Shop' : props.name === 'colony' ? 'Colony R' : "error"}</h2>
-                    <img className={`${props.name}-project-image`} src={`img/${props.name}-project.jpeg`} alt='' />
+                    <img className={`${props.name}-project-image`} src={`img/${props.name === "sams-ressin" ? "sams-resin" : props.name}-project.jpeg`} alt='' />
                 </div>
             </div>
         </>
